@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <ogcsys.h>
+#include <ogc/lwp_watchdog.h>
 
 #include "config.h"
 #include "patches.h"
@@ -117,6 +118,14 @@ void __Loader_SetVMode(u64 tid)
 	}
 }
 
+void __Disc_SetTime(void)
+{
+    /* Extern */
+    extern void settime(u64);
+
+    /* Set proper time */
+    settime(secs_to_ticks(time(NULL) - 946684800));
+}
 
 void __Loader_PatchDol(u8 *buffer, u32 len)
 {
@@ -232,6 +241,9 @@ s32 Loader_Execute(void)
 
 	/* Set video mode */
 	__Loader_SetVMode(tid);
+
+	/* Set time */
+	__Disc_SetTime();
 
 	/* Shutdown subsystems */
 	__Loader_Shutdown();
