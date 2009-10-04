@@ -3,8 +3,8 @@
 #---------------------------------------------------------------------------------
 .SUFFIXES:
 
-DEVKITPRO =	/opt/devkitPPC
-DEVKITPPC =	/opt/devkitPPC
+#DEVKITPRO =	/opt/devkitPPC
+#DEVKITPPC =	/opt/devkitPPC
 
 #---------------------------------------------------------------------------------
 ifeq ($(strip $(DEVKITPPC)),)
