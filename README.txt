@@ -2,7 +2,7 @@
 |   [+] Custom NAND Loader v1.0   |
 |       developed by Waninkoko    |
 +---------------------------------+
-|      wwww.teknoconsolas.es      |
+|      www.teknoconsolas.es      |
 +---------------------------------+
 
 
